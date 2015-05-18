@@ -43,9 +43,12 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   
-  #if 
+  #if m is null, set data to the matrix value in x
   data <- x$get()
+  #set me to inverse value of data
   m <- solve(data, ...)
+  #set the setinv column in x to the value recorded above
   x$setinv(m)
+  #return the value of m
   m
 }
